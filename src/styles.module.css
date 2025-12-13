@@ -20,6 +20,14 @@
   color: black;
 }
 
+/* Home */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style-type: none;
+}
+
 /* Card */
 
 .card {
@@ -40,10 +48,71 @@
   gap: 1rem;
 }
 
-/* Home */
-.cards {
+/* New */
+
+.title {
+  font-size: clamp(1rem, 1vw, 1vw);
+}
+.form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  list-style-type: none;
+  align-items: flex-start;
+}
+
+.form p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+input {
+  outline: none;
+  height: 20px;
+  padding: 0;
+  padding-left: 5px;
+}
+
+textarea {
+  height: 50px;
+  outline: none;
+  padding: 0;
+  padding-left: 5px;
+  padding-top: 5px;
+  max-width: 50vw;
+}
+
+label {
+  text-align: right;
+  width: 100px;
+}
+
+.submit {
+  margin-top: 2rem;
+  padding: 0.35rem 1rem;
+  border-radius: 3px;
+  border: none;
+  background-color: orange;
+  cursor: pointer;
+  color: white;
+  align-self: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.submit:hover {
+  transform: translateY(-3px);
+  background-color: rgb(175, 114, 0);
+}
+
+@media (max-width: 550px) {
+  .form p {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  label {
+    width: auto;
+  }
+
+  textarea {
+  }
 }
