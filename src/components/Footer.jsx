@@ -1,9 +1,9 @@
-import style from './Components.module.css'
+import style from '../styles.module.css'
 
 export default function Footer(){
     return(
-        <nav className={style.nav}>
+        <footer className={style.footer}>
             
-        </nav>
+        </footer>
     )
 }

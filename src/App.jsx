@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { createBrowserRouter,RouterProvider } from 'react-router';
+import { Outlet } from "react-router";
 
 export default function App() {
   const lenisRef = useRef();
@@ -22,15 +22,7 @@ export default function App() {
   return (
     <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       <Navbar />
-      <main>
-        <h1>Scroll down</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aperiam
-          sint tempora totam doloribus maiores in voluptas, at error
-          reprehenderit dolor alias quaerat vero! Delectus inventore iste
-          quisquam labore odit.
-        </p>
-      </main>
+      <Outlet />
       <Footer />
     </ReactLenis>
   );
