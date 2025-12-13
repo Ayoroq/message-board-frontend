@@ -20,7 +20,15 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <main className={styles.main}>
-        {data && data.map((message) => <Card {...message} key={message._id} />)}
+        <ul className={styles.cards}>
+          {!data && <p>Loading...</p>}
+          {data?.length === 0 && <p>No messages yet</p>}
+          {data?.map((message) => (
+            <li key={message.id}>
+              <Card {...message} />
+            </li>
+          ))}
+        </ul>
       </main>
     </div>
   );
