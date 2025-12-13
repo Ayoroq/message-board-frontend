@@ -5,7 +5,7 @@ export default function Navbar(){
     const navigate = useNavigate()
     return(
         <nav className={style.nav}>
-            <div className={style.logo} onClick={() => navigate('/')}>MessageBoard</div>
+            <div className={style.logo} onClick={() => navigate('/')}>NoticeBoard</div>
             <div className={style.links}>
                 <a href="/new" className={style.new}>Create New Message</a>
             </div>

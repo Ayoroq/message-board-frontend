@@ -1,5 +1,7 @@
 import styles from "../styles.module.css";
 import { useState, useEffect } from "react";
+import Card from "../components/Card";
+
 export default function Home() {
   const [data, setData] = useState(null);
   useEffect(() => {
@@ -17,8 +19,8 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
-      <main>
-        {data && data.map((message) => <p key={message.id}>{message.text}</p>)}
+      <main className={styles.main}>
+        {data && data.map((message) => <Card {...message} key={message._id} />)}
       </main>
     </div>
   );
