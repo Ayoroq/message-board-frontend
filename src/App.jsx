@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { createBrowserRouter,RouterProvider } from 'react-router';
 
 export default function App() {
   const lenisRef = useRef();
