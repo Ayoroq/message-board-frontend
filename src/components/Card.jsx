@@ -1,5 +1,23 @@
 import styles from "../styles.module.css";
+import { useNavigate } from "react-router";
+
 export default function Card(message) {
+  const navigate = useNavigate();
+  function handleDelete() {
+    async function deleteMessage() {
+      const response = await fetch(`http://localhost:4000/${message.id}`, {
+        method: "DELETE",
+      });
+      const responseData = await response.json();
+      if (response.ok) {
+        console.log(responseData);
+        navigate(0);
+      } else {
+        console.error("Error deleting message:", responseData.error);
+      }
+    }
+    deleteMessage().catch(console.error);
+  }
   return (
     <div className={styles.card}>
       <p className={styles.text}>{message.text}</p>
@@ -17,6 +35,7 @@ export default function Card(message) {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className={styles.deleteIcon}
+              onClick={handleDelete}
             >
               <g id="Material Symbols Icon (1) 1">
                 <path
