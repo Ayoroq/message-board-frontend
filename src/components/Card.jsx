@@ -4,7 +4,7 @@ export default function Card({ message, setData }) {
   function handleDelete() {
     async function deleteMessage() {
       const deleteResponse = await fetch(
-        `http://localhost:4000/${message.id}`,
+        `${import.meta.env.VITE_API_URL}/${message.id}`,
         {
           method: "DELETE",
         }

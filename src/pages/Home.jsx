@@ -6,7 +6,7 @@ export default function Home() {
   const [data, setData] = useState(null);
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("http://localhost:4000/");
+      const response = await fetch(import.meta.env.VITE_API_URL);
       const responseData = await response.json();
       if (response.ok) {
         setData(responseData);

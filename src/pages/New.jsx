@@ -11,7 +11,7 @@ export default function New() {
   function handleSubmit(e) {
     e.preventDefault();
     async function postData() {
-      const response = await fetch("http://localhost:4000/new", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/new`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
