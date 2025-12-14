@@ -9,7 +9,7 @@ export default function Navbar() {
         NoticeBoard
       </div>
       <div className={style.links} onClick = {() => navigate("/new")}>
-        <p className={style.newMessage}>Create new message</p>
+        <p className={style.newMessage}>Add Notice</p>
         <svg
           width="20"
           height="20"
