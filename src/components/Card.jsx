@@ -3,17 +3,25 @@ import styles from "../styles.module.css";
 export default function Card({ message, setData }) {
   function handleDelete() {
     async function deleteMessage() {
-      const deleteResponse = await fetch(`http://localhost:4000/${message.id}`, {
-        method: "DELETE",
-      });
+      const deleteResponse = await fetch(
+        `http://localhost:4000/${message.id}`,
+        {
+          method: "DELETE",
+        }
+      );
       const deleteResponseData = await deleteResponse.json();
       if (deleteResponse.ok) {
-        setData(prev => prev.filter(m => m.id !== message.id));
+        setData((prev) => prev.filter((m) => m.id !== message.id));
       } else {
         console.error("Error deleting message:", deleteResponseData.error);
       }
     }
     deleteMessage().catch(console.error);
+  }
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { year: "numeric", month: "short", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
   }
   return (
     <div className={styles.card}>
@@ -21,7 +29,7 @@ export default function Card({ message, setData }) {
       <div className={styles.cardInfoContainer}>
         <div className={styles.cardInfo}>
           <p>@{message.user}</p>
-          <p>{message.added}</p>
+          <p>{formatDate(message.added)}</p>
         </div>
         <div className={styles.deleteContainer}>
           <button className={styles.deleteButton}>
