@@ -1,13 +1,28 @@
 {
-  "name": "frontend",
+  "name": "notice-board-frontend",
+  "description": "A modern React frontend for the notice board application with smooth animations - part of The Odin Project curriculum",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "author": "Roqeeb Olaniyi",
+  "license": "MIT",
+  "keywords": ["react", "vite", "notice-board", "gsap", "frontend", "odin-project"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ayoroq/message-board-frontend"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "lint:fix": "eslint . --fix",
+    "preview": "vite preview",
+    "clean": "rm -rf dist",
+    "start": "npm run dev"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
