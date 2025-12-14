@@ -26,7 +26,7 @@ export default function Card({ message, setData }) {
         <div className={styles.deleteContainer}>
           <button className={styles.deleteButton}>
             <svg
-              width="15"
+              width="20"
               height="20"
               viewBox="0 0 48 48"
               fill="none"
