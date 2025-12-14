@@ -1,6 +1,6 @@
 # Notice Board Frontend
 
-![Notice Board App](/public/notice-board.jpeg)
+![Notice Board App](/public/NoticeBoard.jpeg)
 
 A modern React frontend for the notice board application, built with Vite and featuring smooth animations.
 
