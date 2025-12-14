@@ -155,11 +155,16 @@ label {
   label {
     width: auto;
   }
-  .cards,  .main ,.card {
+  .cards,  .main {
     padding: 0;
   }
   .cardInfo {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .card{
+    max-height: 400px;
+    overflow: scroll;
   }
 }

@@ -24,7 +24,7 @@ export default function Card({ message, setData }) {
     return date.toLocaleDateString("en-US", options);
   }
   return (
-    <div className={styles.card}>
+    <div className={styles.card} style={{ backgroundColor: message.color }}>
       <p className={styles.text}>{message.text}</p>
       <div className={styles.cardInfoContainer}>
         <div className={styles.cardInfo}>
