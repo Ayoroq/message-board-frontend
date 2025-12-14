@@ -3,14 +3,14 @@ import styles from "../styles.module.css";
 export default function Card({ message, setData }) {
   function handleDelete() {
     async function deleteMessage() {
-      const response = await fetch(`http://localhost:4000/${message.id}`, {
+      const deleteResponse = await fetch(`http://localhost:4000/${message.id}`, {
         method: "DELETE",
       });
-      const responseData = await response.json();
-      if (response.ok) {
-        setData(responseData.data);
+      const deleteResponseData = await deleteResponse.json();
+      if (deleteResponse.ok) {
+        setData(prev => prev.filter(m => m.id !== message.id));
       } else {
-        console.error("Error deleting message:", responseData.error);
+        console.error("Error deleting message:", deleteResponseData.error);
       }
     }
     deleteMessage().catch(console.error);

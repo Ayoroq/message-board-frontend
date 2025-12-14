@@ -158,10 +158,7 @@ label {
 
   textarea {
   }
-  .main {
-    padding: 0;
-  }
-  .cards {
+  .cards,  .main ,.card {
     padding: 0;
   }
   .cardInfo {
