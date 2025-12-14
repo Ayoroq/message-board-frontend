@@ -20,12 +20,12 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <main className={styles.main}>
+        {!data && <div className={styles.loading}>Loading...</div>}
+        {data?.length === 0 && <div className={styles.noMessages}>No messages yet</div>}
         <ul className={styles.cards}>
-          {!data && <p>Loading...</p>}
-          {data?.length === 0 && <p>No messages yet</p>}
           {data?.map((message) => (
             <li key={message.id}>
-              <Card {...message} />
+              <Card message={message} setData={setData} />
             </li>
           ))}
         </ul>

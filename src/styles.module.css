@@ -2,6 +2,13 @@
   padding: 3rem;
 }
 
+.loading,.noMessages{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
 /* Navbar*/
 .nav {
   display: flex;

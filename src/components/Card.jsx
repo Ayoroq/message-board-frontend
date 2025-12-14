@@ -1,8 +1,6 @@
 import styles from "../styles.module.css";
-import { useNavigate } from "react-router";
 
-export default function Card(message) {
-  const navigate = useNavigate();
+export default function Card({ message, setData }) {
   function handleDelete() {
     async function deleteMessage() {
       const response = await fetch(`http://localhost:4000/${message.id}`, {
@@ -10,8 +8,8 @@ export default function Card(message) {
       });
       const responseData = await response.json();
       if (response.ok) {
-        console.log(responseData);
-        navigate(0);
+        console.log(responseData.data);
+        setData(responseData.data);
       } else {
         console.error("Error deleting message:", responseData.error);
       }
