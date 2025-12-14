@@ -2,7 +2,8 @@
   padding: 3rem;
 }
 
-.loading,.noMessages{
+.loading,
+.noMessages {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,9 +12,13 @@
 
 /* Navbar*/
 .nav {
+  padding: 3rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 
 .logo {
@@ -27,15 +32,13 @@
   color: black;
 }
 
-/* Home */
+/* Card */
 .cards {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   list-style-type: none;
 }
-
-/* Card */
 
 .card {
   display: flex;
@@ -50,10 +53,10 @@
   line-height: 1.5;
 }
 
-.cardInfoContainer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.cardInfoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .cardInfo {
@@ -61,18 +64,18 @@
   gap: 1rem;
 }
 
-.deleteButton{
-    width: min-content;
-    background-color: transparent;
-    border: none;
+.deleteButton {
+  width: min-content;
+  background-color: transparent;
+  border: none;
 }
-.deleteIcon{
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.deleteIcon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.deleteIcon:hover{
-    transform: scale(1.2)
+.deleteIcon:hover {
+  transform: scale(1.2);
 }
 
 /* New */
@@ -130,7 +133,7 @@ label {
   background-color: rgb(175, 114, 0);
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .form p {
     flex-direction: column;
     align-items: flex-start;
@@ -141,5 +144,15 @@ label {
   }
 
   textarea {
+  }
+  .main {
+    padding: 0;
+  }
+  .cards {
+    padding: 0;
+  }
+  .cardInfo {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }

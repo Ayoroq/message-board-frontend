@@ -8,7 +8,6 @@ export default function Card({ message, setData }) {
       });
       const responseData = await response.json();
       if (response.ok) {
-        console.log(responseData.data);
         setData(responseData.data);
       } else {
         console.error("Error deleting message:", responseData.error);
