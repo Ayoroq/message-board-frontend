@@ -28,7 +28,7 @@ export default function Card({ message, setData }) {
       <p className={styles.text}>{message.text}</p>
       <div className={styles.cardInfoContainer}>
         <div className={styles.cardInfo}>
-          <p>@{message.user}</p>
+          <p>@{message.username}</p>
           <p>{formatDate(message.added)}</p>
         </div>
         <div className={styles.deleteContainer}>
