@@ -7,6 +7,7 @@ export default function New() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
+  const [error, setError] = useState(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,7 +26,8 @@ export default function New() {
         setText("");
         navigate("/");
       } else {
-        console.error("Error posting data:", responseData.error);
+        console.error("Error posting data:", responseData.errors);
+        setError(responseData.errors);
       }
     }
     postData().catch(console.error);
@@ -45,6 +47,9 @@ export default function New() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
+          {error?.find(err => err.path === "username") && (
+            <p className={styles.error}>{error.find(err => err.path === "username").msg}</p>
+          )}
         </p>
         <p>
           <label htmlFor="email">Email</label>
@@ -56,6 +61,9 @@ export default function New() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          {error?.find(err => err.path === 'email') && (
+            <p className={styles.error}>{error.find(err => err.path === 'email').msg}</p>
+          )}
         </p>
         <p>
           <label htmlFor="message">Message</label>
@@ -68,6 +76,9 @@ export default function New() {
             rows={10}
             onChange={(e) => setText(e.target.value)}
           ></textarea>
+          {error?.find(err => err.path === "text") && (
+            <p className={styles.error}>{error.find(err => err.path === "text").msg}</p>
+          )}
         </p>
         <button type="submit" className={styles.submit}>
           Submit

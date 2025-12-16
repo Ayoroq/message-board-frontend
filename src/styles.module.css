@@ -144,6 +144,11 @@ label {
   background-color: rgb(175, 114, 0);
 }
 
+.error{
+  color: red;
+  margin: 0;
+}
+
 @media (max-width: 600px) {
   .newMessage {
     display: none;
