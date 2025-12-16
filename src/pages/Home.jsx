@@ -25,7 +25,7 @@ export default function Home() {
         <ul className={styles.cards}>
           {data?.map((message) => (
             <li key={message.id}>
-              <Card message={message} setData={setData} />
+              <Card message={message} />
             </li>
           ))}
         </ul>
